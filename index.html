@@ -225,85 +225,82 @@ is predicted that by 2050 sea levels rising threatens cities such as Shanghai, L
      </body>
     
  <h3 id="Conference Presentation"><b>Conference Presentation.pptx</b></h3>
+   #slide-container  {
+              text-align: center;
+              position: relative;
+            }
+
+            .button-container  {
+              position: absolute;
+              bottom: 0;
+              left: 50%;
+              transform: translateX(-50%);
+              margin-bottom: -100px;
+            }
+
+            .button  {
+              padding: 10px 20px;
+              background-color: #4caf50;
+              color: white;
+              border: none;
+              border-radius: 5px;
+              font-size: 16px;
+              cursor: pointer;
+              margin: 0 5px;
+            }
+
+            .slide-number-container  {
+              position: absolute;
+              bottom: 0;
+              left: 50%;
+              transform: translateX(-50%);
+              margin-bottom: -50px;
+            }
+
+
+
+
+CODE FOR MAIN CODE BODY
+<script>
+      var slideImages=["Slide1.PNG", "Slide2.PNG", "Slide3.PNG", "Slide4.PNG", "Slide5.PNG"]
+      var currentSlide = 0;
+ 
+      function showSlide()  {
+        document.getElementById('slide').src = slideImages[currentSlide];
+      }
+ 
+      function nextSlide()  {
+        currentSlide = (currentSlide+1) % slideImages.length;
+        showSlide();
+      }
+ 
+      function prevSlide()  {
+        currentSlide = (currentSlide - 1 + slideImages.length) % slideImages.length;
+        showSlide();
+      }
+ 
+      function showSlideNumber(slideNumber)  {
+        currentSlide = slideNumber - 1;
+        showSlide();
+      }
+ 
+      showSlide();
+    </script>
     <div id="slide-container">
-        <img id="slide" src="slide1.jpg" alt="Slide 1" style="width:100%; max-width:800px;">
-
-        <!-- Previous and Next buttons container -->
-        <div class="button-container">
-            <button class="button" onclick="prevSlide()">Previous</button>
-            <button class="button" onclick="nextSlide()">Next</button>
-        </div>
-
-        <!-- Slide Number buttons container -->
-        <div class="slide-number-container">
-            <button class="button" onclick="showSlideNumber(1)">1</button>
-            <button class="button" onclick="showSlideNumber(2)">2</button>
-            <button class="button" onclick="showSlideNumber(3)">3</button>
-            <button class="button" onclick="showSlideNumber(4)">4</button>
-            <button class="button" onclick="showSlideNumber(5)">5</button>
-        </div>
+      <img id="slide" src="Slide1.PNG" alt="Slide 1" style="width:100%; max-width:800px;">
+     
+    <div class="button-container">
+      <button class="button" onclick="prevSlide()">Previous</button>
+      <button class="button" onclick="nextSlide()">Next</button>
     </div>
 
-    <!-- Script for slide functionality -->
-    <script>
-        var slideImages = ["slide1.PNG", "slide2.PNG", "slide3.PNG", "slide4.PNG", "slide5.PNG"];
-        var currentSlide = 0;
-
-        function showSlide(slide1.PNG) {
-            document.getElementById('slide').src = slideImages[currentSlide];
-        }
-
-        function nextSlide(slide2.PNG) {
-            currentSlide = (currentSlide + 1) % slideImages.length;
-            showSlide();
-        }
-
-        function prevSlide(slide2.PNG) {
-            currentSlide = (currentSlide - 1 + slideImages.length) % slideImages.length;
-            showSlide();
-        }
-
-        function showSlideNumber(slideNumber) {
-            currentSlide = slideNumber - 1;
-            showSlide();
-        }
-
-        showSlide();
-    </script>
-
-    <style>
-        #slide-container {
-            text-align: center;
-            position: relative;
-        }
-
-        .button-container {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            margin-bottom: -100px;
-        }
-
-        .button {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            margin: 0 5px;
-        }
-
-        .slide-number-container {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            margin-bottom: -50px;
-        }
-    </style>
+ <div class="slide-number-container">
+      <button class="button" onclick="showSlideNumber(1)">1</button>
+      <button class="button" onclick="showSlideNumber(2)">2</button>
+      <button class="button" onclick="showSlideNumber(3)">3</button>
+      <button class="button" onclick="showSlideNumber(4)">4</button>
+      <button class="button" onclick="showSlideNumber(5)">5</button>
+    </div> 
 
 <h3 id="References">References</h3>
 
